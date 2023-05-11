@@ -274,3 +274,41 @@ If a pid is found, kill it.
 
 ## Config Files
 
+BOOM CONFIG FILE PATH : chipyard/generators/boom/src/main/scala/common/config-mixins.scala (This is where you can change the number of cores, L1 cache size, L2 cache size, etc.)
+Comments are added to config.scala to explain what each parameter does. We are using the LargeBoomCore.
+
+Performance Counters: chipyard/generators/boom/src/main/scala/exu/core.scala
+Comments are added to core.scala to explain what each performance counter does. You can add more performance counters here.
+
+## Installing the RISC-V Toolchain
+
+For practical purposes, we need to use the riscv toolchain outside the chipyard directory. This is because the toolchain in chipyard is not compatible with the linux on the FPGA. It is mostly used for software simulation and not bare metral. 
+
+More support at : https://github.com/riscv-collab/riscv-gnu-toolchain
+
+
+To install the riscv toolchain, run the following commands:
+
+```
+$ git clone https://github.com/riscv/riscv-gnu-toolchain
+$ sudo apt-get install autoconf automake autotools-dev curl python3 libmpc-dev libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo gperf libtool patchutils bc zlib1g-dev libexpat-dev ninja-build
+./configure --prefix=/opt/riscv
+make
+```
+
+One that is done, you will have the unknown-elf-gcc compiler in the riscv-gnu-toolchain/riscv64-unknown-elf-gcc/bin directory. You can use this to compile your code.
+
+To install the linux gnu toolchain, run the following commands:
+
+```
+./configure --prefix=/opt/riscv
+make linux
+```
+
+One that is done, you will have the linux-unknown-gcc compiler in the riscv-gnu-toolchain/riscv64-unknown-linux-gnu/bin directory. You can use this to compile your code.
+
+Note : This toolchain will compile for a 64 bit RISC-V processor. It is fine as BOOM is a 64 bit processor.
+
+
+## Compiling the RISC-V Toolchain
+
