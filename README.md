@@ -242,6 +242,35 @@ Note: It is very important to unmount the sdcard before removing it from the FPG
 
 ```umount /dev/mmcblk0p2```
 
+## Using QEMU
 
+QEMU is a virtual machine. It allows us to run linux on our computer. We can use QEMU to run the linux binary that we generated earlier. This is useful because it allows us to test the linux binary without having to program the FPGA everytime. It also comes bundles with the chipyard toolchain.
 
+Head over to the firesim directory.
+
+```
+cd $PATH_TO_FIRESIM
+./init-submodules.sh
+```
+
+Change the marshal-config.yaml file to point to the ../../sim/* directory. This should be the command you commented out before. 
+
+Run the following command to build the linux binary for QEMU. This will take a while.
+```
+marshal build ./example-workloads/example-fed.json
+```
+
+Run the following command to run the linux binary in QEMU.
+```
+marshal launch ./example-workloads/example-fed.json
+```
+
+Troubleshooting: If you get an error. Try removing the runOutput. 
+```
+lsof +D /runOutput
+
+If a pid is found, kill it.
+```
+
+## Config Files
 
