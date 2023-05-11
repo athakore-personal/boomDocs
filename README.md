@@ -20,7 +20,7 @@ Welcome to Boom Docs!
 ## Installing Conda
 Conda is a package manager that will allow us to install all the necessary packages for our project.
 
-```conda --version # must be version 4.12.0 or higher
+```conda --version # must be version 4.12.0 or higher```
 
 If you don't have conda installed, follow the instructions here: https://github.com/conda-forge/miniforge/#download
 
