@@ -1,0 +1,29 @@
+export PATH=$PATH:/home1/c/cis571/tools/bin/
+source /mnt/eclipse/acg/public/Vivado/2022.1/settings64.sh
+source /home1/a/athakore/532_project/project/sourceMe.sh
+alias boom="cd /mnt/eclipse/acg/users/athakore/chipyard && source ./env.sh"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/mnt/castor/seas_home/a/athakore/mambaforge/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/mnt/castor/seas_home/a/athakore/mambaforge/etc/profile.d/conda.sh" ]; then
+        . "/mnt/castor/seas_home/a/athakore/mambaforge/etc/profile.d/conda.sh"
+    else
+        export PATH="/mnt/castor/seas_home/a/athakore/mambaforge/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+
+if [ -f "/mnt/castor/seas_home/a/athakore/mambaforge/etc/profile.d/mamba.sh" ]; then
+    . "/mnt/castor/seas_home/a/athakore/mambaforge/etc/profile.d/mamba.sh"
+fi
+# <<< conda initialize <<<
+
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+export PATH=/mnt/pollux/software/xilinx/2020.2/Vivado/2020.2/bin:/home1/c/cis5710/tools/bin:$PATH
