@@ -26,8 +26,10 @@ If you don't have conda installed, follow the instructions here: https://github.
 
 or run the following command:
 
-```wget "https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-$(uname)-$(uname -m).sh"
-bash Mambaforge-$(uname)-$(uname -m).sh```
+```
+wget "https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-$(uname)-$(uname -m).sh"
+bash Mambaforge-$(uname)-$(uname -m).sh
+```
 
 Follow the instructions and make sure to say yes to the prompts in the installer script.
 
@@ -132,11 +134,14 @@ Note: $PATH_TO_FIREMARSHAL is the path to the firemarshal directory and is not a
 
 Now we need to build the linux binary.
 
-```./marshal -v -d build br-base.json # here the -d indicates --nodisk or initramfs```
+```
+./marshal -v -d build br-base.json # here the -d indicates --nodisk or initramfs
+```
 
 The last step to generate the proper binary is to flatten it. This is done by using FireMarshal’s install feature which will produce a *-flat binary in the $PATH_TO_FIREMARSHAL/images directory (in our case br-base-bin-nodisk-flat) from the previously built Linux binary (br-base-bin-nodisk).
 
-```./marshal -v -d install -t prototype br-base.json```
+```
+./marshal -v -d install -t prototype br-base.json```
 
 
 ## Setting up the SD Card
