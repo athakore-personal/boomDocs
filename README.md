@@ -5,17 +5,22 @@ Welcome to Boom Docs!
 
 ## Inportant Links
 [Chipyard Github](https://github.com/ucb-bar/chipyard)
+
 [Chipyard Docs](https://chipyard.readthedocs.io/en/stable/)
+
 [Chipyard Mailing List](https://groups.google.com/g/riscv-boom)
+
 [Boom Website](https://boom-core.org/)
+
 [Boom Github](https://github.com/riscv-boom/riscv-boom)
+
 [Boom Docs](https://docs.boom-core.org/en/latest/)
 
 
 ## Installing Conda
 Conda is a package manager that will allow us to install all the necessary packages for our project.
 
-conda --version # must be version 4.12.0 or higher
+```conda --version # must be version 4.12.0 or higher
 
 If you don't have conda installed, follow the instructions here: https://github.com/conda-forge/miniforge/#download
 
