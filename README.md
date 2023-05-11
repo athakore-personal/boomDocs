@@ -35,8 +35,10 @@ Follow the instructions and make sure to say yes to the prompts in the installer
 
 Run the following command to make sure conda is installed correctly:
 
-```conda install -n base conda-lock
-conda activate base```
+```
+conda install -n base conda-lock
+conda activate base
+```
 
 Restart your terminal, you should see (base) next to your peompt.
 
@@ -44,11 +46,13 @@ Restart your terminal, you should see (base) next to your peompt.
 
 Now we need to clone the chipyard repository. This is the repository that contains the rocket-chip generator and the boom core generator.
 
-```git clone https://github.com/ucb-bar/chipyard.git
+```
+git clone https://github.com/ucb-bar/chipyard.git
 
 cd chipyard
 
-git checkout 1.9.0```
+git checkout 1.9.0
+```
 
 Now, we need to build the RISCV toolchain. This will take a while.
 
@@ -67,8 +71,10 @@ The boom alias also ensures that we can talk to the floating license server. The
 
 You need to set the ulimit to be 16384 or greater for open pages. This is because the chipyard build process opens a lot of files. To check if the ulimit is set correctly, run the following command:
 
-```ulimit -Sn # should be 16384 or greater
-ulimit -Hn # should be 16384 or greater```
+```
+ulimit -Sn # should be 16384 or greater
+ulimit -Hn # should be 16384 or greater
+```
 
 If the ulimit is not set correctly, run the following command:
 
@@ -80,8 +86,10 @@ To set the ulimit permanently, run the following command:
 
 Once the file is open, add the following lines to the end of the file:
 
-```* soft nofile 16384
-* hard nofile 16384```
+```
+* soft nofile 16384
+* hard nofile 16384
+```
 
 Save the file and restart your terminal. Run the ulimit commands again to make sure the ulimit is set correctly.
 
@@ -93,8 +101,10 @@ First we need to source the FPGA init script. This will setup the environment va
 
 Now we can build the boom core. This will take a while.
 
-```cd fpga/
-make SUB_PROJECT=vcu118 CONFIG=BoomVCU118Config bitstream```
+```
+cd fpga/
+make SUB_PROJECT=vcu118 CONFIG=BoomVCU118Config bitstream
+```
 
 This is where you can face some issues. If you get an error about a missing file, check the current github branch you are on. You should be on the 1.9.0 branch. If a ulimit error occurs check the setup for ulimit again. If the license check fails, check the setup for the license server again. 
 
@@ -141,7 +151,8 @@ Now we need to build the linux binary.
 The last step to generate the proper binary is to flatten it. This is done by using FireMarshal’s install feature which will produce a *-flat binary in the $PATH_TO_FIREMARSHAL/images directory (in our case br-base-bin-nodisk-flat) from the previously built Linux binary (br-base-bin-nodisk).
 
 ```
-./marshal -v -d install -t prototype br-base.json```
+./marshal -v -d install -t prototype br-base.json
+```
 
 
 ## Setting up the SD Card
