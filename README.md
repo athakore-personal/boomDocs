@@ -122,8 +122,11 @@ cd software/firemarshal
 
 By default, FireMarshal is setup to work with FireSim. Instead, we want to target the prototype platform. This is done by switching the FireMarshal “board” from “firechip” to “prototype” using the following command:
 
-```vim marshal-config.yaml # comment whatever is in there
-echo "board-dir : 'boards/prototype'" > $PATH_TO_FIREMARSHAL/marshal-config.yaml```
+```
+vim marshal-config.yaml # comment whatever is in there
+
+echo "board-dir : 'boards/prototype'" > $PATH_TO_FIREMARSHAL/marshal-config.yaml
+```
 
 Note: $PATH_TO_FIREMARSHAL is the path to the firemarshal directory and is not an already set environment variable.
 
