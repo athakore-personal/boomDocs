@@ -137,7 +137,7 @@ By default, FireMarshal is setup to work with FireSim. Instead, we want to targe
 ```
 vim marshal-config.yaml # comment whatever is in there
 
-echo "board-dir : 'boards/prototype'" > $PATH_TO_FIREMARSHAL/marshal-config.yaml
+echo "board-dir : 'boards/prototype'" >> $PATH_TO_FIREMARSHAL/marshal-config.yaml
 ```
 
 Note: $PATH_TO_FIREMARSHAL is the path to the firemarshal directory and is not an already set environment variable.
